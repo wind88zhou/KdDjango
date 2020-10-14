@@ -22,14 +22,12 @@ Including another URLconf
 # ]
 
 from django.urls import path,include
-from django.conf.urls import url
 from kdapp import views
-from django.contrib import admin 
+ 
 from . import views
  
 urlpatterns = [
     path('hello/', views.hello),
     path('sayNMB/',views.sayNMB),
     path('kdapp/', include('kdapp.urls')),
-    url(r'^admin/', admin.site.urls),
 ]
