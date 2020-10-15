@@ -4,6 +4,7 @@ from kdapp import views # 从自己的 app 目录引入 views
 
 urlpatterns = [ 
     path('showAppMsg', views.showAppMsg,name='showAppMsg'),
+    path('addemp', views.addemp,name='addemp'),  
     # path('linklist', views.linklist,name='linklist'),
     # path('updatelink', views.updatelink,name='updatelink'),
     # path('dellink', views.dellink,name='dellink'),
