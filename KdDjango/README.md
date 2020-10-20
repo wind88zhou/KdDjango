@@ -2,7 +2,7 @@
 这是锋哥玩儿的地盘！船新滴开始！
 
 20201020
-今天到体检啊
+今天到体检啊  抽了5管血啊
 试试新下载的代码管理工具gitkraken，下载地址：https://www.gitkraken.com/
 
 20201014
@@ -15,7 +15,7 @@
 20200929
 来回顾下，怕忘记git命令了
  git status
- git -add +文件
+ git add +文件
  git commit -m “提交说明”
  git push origin master   
 
