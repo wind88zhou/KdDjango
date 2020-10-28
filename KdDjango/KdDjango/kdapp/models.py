@@ -13,7 +13,7 @@ class BookInfo(models.Model):
     '''图书模型类'''
     btitle = models.CharField(max_length=20)
     bpub_data = models.DateField()
-    bread = models.IntegeField(default=0)
+    bread = models.IntegerField(default=0)
     bcomment = models.IntegerField(default=0)
     isDelete = models.BooleanField(default=False)
 
