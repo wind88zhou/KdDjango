@@ -35,7 +35,7 @@ def create(request):
     #  新增一本图书
     b = BookInfo()
     b.btitle = "lxhdj"
-    b.bpub_date = date(1990,1,1)
+    b.bpub_data = date(1990,1,1)
     b.save()
 
     return HttpResponseRedirect('/index')
