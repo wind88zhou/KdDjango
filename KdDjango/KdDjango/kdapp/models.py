@@ -25,7 +25,7 @@ class HeroInfo(models.Model):
     hgender = models.BooleanField(default=False)
     hcomment = models.CharField(max_length=20)
     # 关系属性
-    hbook = models.ForeignKey('BookInfo')
+    hbook = models.ForeignKey('BookInfo',on_delete=models.CASCADE)
     isDelete = models.BooleanField(default=False)
 
     def __str__(self):
