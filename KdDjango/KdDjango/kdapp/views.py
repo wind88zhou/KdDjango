@@ -38,4 +38,4 @@ def create(request):
     b.bpub_date = date(1990,1,1)
     b.save()
 
-    return HttpResponse('OK')
+    return HttpResponse("OK")
