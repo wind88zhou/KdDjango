@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse,FileResponse
+from django.http import HttpResponse, JsonResponse,FileResponse,HttpResponseRedirect
 from kdapp  import models
 from kdapp.models import BookInfo
 from kdapp.My_forms import EmpForm
@@ -38,4 +38,4 @@ def create(request):
     b.bpub_date = date(1990,1,1)
     b.save()
 
-    return HttpResponse("OK")
+    return HttpResponseRedirect('/index')
