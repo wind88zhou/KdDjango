@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse,FileResponse
 from kdapp  import models
+from kdapp.models import BookInfo
 from kdapp.My_forms import EmpForm
 from django.core.exceptions import ValidationError
 # Create your views here
@@ -24,3 +25,7 @@ def addemp(request):
             clear_errors = form.errors.get("__all__")  # 获取全局钩子错误信息
             return render(request, "addemp.html", {"form": form, "clear_errors": clear_errors})
 
+def index(request):
+    # 显示图书信息
+    books = BookInfo.objects.all()
+    return render(request,"index.html",{'books':books})

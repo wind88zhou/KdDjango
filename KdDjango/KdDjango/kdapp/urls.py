@@ -8,4 +8,5 @@ urlpatterns = [
     # path('linklist', views.linklist,name='linklist'),
     # path('updatelink', views.updatelink,name='updatelink'),
     # path('dellink', views.dellink,name='dellink'),
+    url(r'^index$', views.index,name='index'),
 ]
