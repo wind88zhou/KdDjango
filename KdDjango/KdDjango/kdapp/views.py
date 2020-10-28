@@ -38,4 +38,4 @@ def create(request):
     b.bpub_data = date(1990,1,1)
     b.save()
 
-    return HttpResponseRedirect('kdapp/index')
+    return HttpResponseRedirect('index')
