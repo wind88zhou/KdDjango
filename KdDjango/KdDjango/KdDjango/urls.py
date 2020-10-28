@@ -32,4 +32,5 @@ urlpatterns = [
     path('sayNMB/',views.sayNMB),
     path('kdapp/', include('kdapp.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('kdapp.urls')),
 ]
