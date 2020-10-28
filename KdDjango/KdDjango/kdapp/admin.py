@@ -6,5 +6,6 @@ class  ATestAdmin(admin.ModelAdmin):
     list_display = ['id','name']
 
 # Register your models here.
-admin.site.register(Test,ATestAdmin,BookInfo,HeroInfo)
+admin.site.register(Test,ATestAdmin)
+admin.site.register([BookInfo,HeroInfo])
 
