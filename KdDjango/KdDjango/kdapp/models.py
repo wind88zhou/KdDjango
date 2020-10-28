@@ -17,6 +17,9 @@ class BookInfo(models.Model):
     bcomment = models.IntegerField(default=0)
     isDelete = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.btitle
+
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
     hgender = models.BooleanField(default=False)
@@ -24,3 +27,6 @@ class HeroInfo(models.Model):
     # 关系属性
     hbook = models.ForeignKey('BookInfo')
     isDelete = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.hname
