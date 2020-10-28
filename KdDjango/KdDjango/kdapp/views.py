@@ -4,6 +4,7 @@ from kdapp  import models
 from kdapp.models import BookInfo
 from kdapp.My_forms import EmpForm
 from django.core.exceptions import ValidationError
+from datetime import date
 # Create your views here
 
 def showAppMsg(request):
@@ -29,3 +30,12 @@ def index(request):
     # 显示图书信息
     books = BookInfo.objects.all()
     return render(request,"index.html",{'books':books})
+
+def create(request):
+    #  新增一本图书
+    b = BookInfo()
+    b.btitle = "lxhdj"
+    b.bpub_date = date(1990,1,1)
+    b.save()
+
+    return HttpResponse('OK')

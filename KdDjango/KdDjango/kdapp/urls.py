@@ -9,4 +9,5 @@ urlpatterns = [
     # path('updatelink', views.updatelink,name='updatelink'),
     # path('dellink', views.dellink,name='dellink'),
     url(r'^index$', views.index,name='index'),
+    url(r'^create$', views.create,name='create'),
 ]
