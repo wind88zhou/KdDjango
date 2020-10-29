@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect #导入简单的重定向函数
 from django.http import HttpResponse, JsonResponse,FileResponse,HttpResponseRedirect
 from kdapp  import models
 from kdapp.models import BookInfo
@@ -38,11 +38,13 @@ def create(request):
     b.bpub_data = date(1990,1,1)
     b.save()
 
-    return HttpResponseRedirect('index')
+    # return HttpResponseRedirect('index') 简写如下一句
+    return redirect('index')
 
 def delete(request,bid):
     # 删掉点击的图书
     book = BookInfo.objects.get(id = bid)
     book.delete()
-    return HttpResponseRedirect('index')
+    # return HttpResponseRedirect('index') 简写如下一句
+    return redirect('index')
     
