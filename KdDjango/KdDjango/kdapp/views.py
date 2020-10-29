@@ -32,7 +32,7 @@ def index(request):
     return render(request,"index.html",{'books':books})
 
 def create(request):
-    #  新增一本图书
+    #  新增一本图书   sdsad
     b = BookInfo()
     b.btitle = "lxhdj"
     b.bpub_data = date(1990,1,1)
