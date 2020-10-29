@@ -39,3 +39,10 @@ def create(request):
     b.save()
 
     return HttpResponseRedirect('index')
+
+def delete(request,bid):
+    # 删掉点击的图书
+    book = BookInfo.objects.get(id = bid)
+    book.delete()
+    return HttpResponseRedirect('index')
+    

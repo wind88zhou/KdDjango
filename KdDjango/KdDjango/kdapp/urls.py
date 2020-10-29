@@ -10,4 +10,5 @@ urlpatterns = [
     # path('dellink', views.dellink,name='dellink'),
     url(r'^index$', views.index,name='index'),
     url(r'^create$', views.create,name='create'),
+    url(r'^delete(\d+)$', views.delete,name='delete'),
 ]
