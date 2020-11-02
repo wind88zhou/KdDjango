@@ -19,6 +19,9 @@ class BookInfo(models.Model):
 
     def __str__(self):
         return self.btitle
+    
+    class Meta:
+        db_table = "bookinfo"  # 指定模型类对应的表名
 
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
