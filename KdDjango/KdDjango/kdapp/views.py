@@ -47,4 +47,10 @@ def delete(request,bid):
     book.delete()
     # return HttpResponseRedirect('index') 简写如下一句
     return redirect('index')
-    
+
+def login(request):
+    return render(request,"login.html",{})
+
+
+def longin_check(request):
+    return HttpResponse("login OK")
