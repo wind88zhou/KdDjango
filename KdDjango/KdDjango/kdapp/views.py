@@ -49,8 +49,16 @@ def delete(request,bid):
     return redirect('index')
 
 def login(request):
+    
     return render(request,"login.html",{})
 
 
 def longin_check(request):
+    '''登录校验视图'''
+    # 1、获取提交的用户名和密码
+
+    # 2、进行登录校验
+
+    # 3、返回应答
+
     return HttpResponse("login OK")
