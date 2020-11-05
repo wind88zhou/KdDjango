@@ -56,9 +56,16 @@ def login(request):
 def longin_check(request):
     '''登录校验视图'''
     # 1、获取提交的用户名和密码
+    username = request.POST.get('username')
+    password = request.POST.get('password')
 
     # 2、进行登录校验
-
+    if username == 'smart' and password =='123':
+        # 用户名、密码正确
+        return redirect('index')
+    else:
+        # 用户名、密码错误
+        return redirect('login')
     # 3、返回应答
 
-    return HttpResponse("login OK")
+    
