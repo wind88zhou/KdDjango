@@ -107,7 +107,7 @@ def set_session(request):
     # 设置session
     request.session['username'] = 'smart'
     request.session['age'] = 18
-    return HttpResponse('设置session')
+    return HttpResponse('设置session@!!')
 
 # /get_session
 def get_session(request):
