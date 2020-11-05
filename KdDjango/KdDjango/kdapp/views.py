@@ -58,7 +58,8 @@ def longin_check(request):
     # 1、获取提交的用户名和密码
     username = request.POST.get('username')
     password = request.POST.get('password')
-
+    remember = request.POST.get('remember')
+    print(remember)
     # 2、进行登录校验
     if username == 'smart' and password =='123':
         # 用户名、密码正确
