@@ -49,8 +49,14 @@ def delete(request,bid):
     return redirect('index')
 
 def login(request):
+    # 获取cookie  username
+    if 'username' in request.COOKIES:
+        # 获取记住的用户名
+        username = request.COOKIES['username']
+    else:
+        username = ''
 
-    return render(request,"login.html")
+    return render(request,"login.html",{'username':username})
 
 
 def longin_check(request):
