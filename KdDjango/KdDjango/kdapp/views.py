@@ -59,11 +59,16 @@ def longin_check(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
     remember = request.POST.get('remember')
-    print(remember)
+    # print(remember)
     # 2、进行登录校验
     if username == 'smart' and password =='123':
         # 用户名、密码正确
-        return redirect('index')
+        response = redirect('index')
+        # 判断是否需要记住用户名
+        if remember == 'on':
+            # 设置cookie username 过期时间为60s
+            response.set_cookie('username',username,max_age=60)
+        return response
     else:
         # 用户名、密码错误
         return redirect('login')
