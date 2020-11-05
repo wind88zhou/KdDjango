@@ -4,7 +4,7 @@ from kdapp  import models
 from kdapp.models import BookInfo
 from kdapp.My_forms import EmpForm
 from django.core.exceptions import ValidationError
-from datetime import date
+from datetime import date,datetime,timedelta
 # Create your views here
 
 def showAppMsg(request):
@@ -77,7 +77,10 @@ def login_ajax(request):
 def set_cookie(request):
     response = HttpResponse('设置cookie')
     # 设置一个cookie信息，名字为num，值为1
-    response.set_cookie('num',1)
+    # 设置cookie 60s后过期
+    response.set_cookie('num',1,max_age=60)
+    # 设置cookie 2周之后过去
+    # response.set_cookie('num',1,expires=datetime.now()+timedelta(days=14))
     # 返回response
     return response
 
