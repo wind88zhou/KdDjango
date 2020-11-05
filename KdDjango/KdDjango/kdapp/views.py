@@ -72,3 +72,17 @@ def longin_check(request):
 def login_ajax(request):
 
     return render(request,'login_ajax.html')
+
+# /set_cookie
+def set_cookie(request):
+    response = HttpResponse('设置cookie')
+    # 设置一个cookie信息，名字为num，值为1
+    response.set_cookie('num',1)
+    # 返回response
+    return response
+
+# /get_cookie
+def get_cookie(request):
+    # 去除cookie num的值
+    num = request.COOKIES['num']
+    return HttpResponse(num)
