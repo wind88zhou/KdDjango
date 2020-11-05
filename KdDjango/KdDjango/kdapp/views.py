@@ -68,6 +68,7 @@ def longin_check(request):
         return redirect('login')
     # 3、返回应答
 
+# 缺失js文件，未完！
 def login_ajax(request):
 
     return render(request,'login_ajax.html')
