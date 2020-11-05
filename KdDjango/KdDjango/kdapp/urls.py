@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^login$', views.login,name='login'),
     url(r'^longin_check$', views.longin_check,name='longin_check'),
     url(r'^login_ajax$', views.login_ajax,name='login_ajax'),
+    url(r'^set_cookie$', views.set_cookie,name='set_cookie'), # 设置cookie
+    url(r'^get_cookie$', views.get_cookie,name='get_cookie'), # 获取cookie
 ]
