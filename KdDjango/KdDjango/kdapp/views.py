@@ -101,3 +101,17 @@ def get_cookie(request):
     # 去除cookie num的值
     num = request.COOKIES['num']
     return HttpResponse(num)
+
+# /set_session
+def set_session(request):
+    # 设置session
+    request.session['username'] = 'smart'
+    request.session['age'] = 18
+    return HttpResponse('设置session')
+
+# /get_session
+def get_session(request):
+    # 获取session
+    username = request.session['username']
+    age = request.session['age']
+    return HttpResponse(username+':'+str(age))
