@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^delete(\d+)$', views.delete,name='delete'), # 捕获URL参数：位置参数
     url(r'^login$', views.login,name='login'),
     url(r'^longin_check$', views.longin_check,name='longin_check'),
+    url(r'^login_ajax$', views.login_ajax,name='login_ajax'),
 ]
