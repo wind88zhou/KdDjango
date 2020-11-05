@@ -115,3 +115,7 @@ def get_session(request):
     username = request.session['username']
     age = request.session['age']
     return HttpResponse(username+':'+str(age))
+
+def clear_session(request):
+    request.session.clear()
+    return HttpResponse('清除成功!')
