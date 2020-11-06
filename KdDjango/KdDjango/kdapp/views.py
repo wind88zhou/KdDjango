@@ -120,3 +120,13 @@ def get_session(request):
 def clear_session(request):
     request.session.clear()
     return HttpResponse('清除成功!')
+
+# 传给模板的变量
+def temp_var(request):
+    my_dict = {'title':'字典键值'}
+    my_list = [1,2,3]
+    book = BookInfo.objects.get(id=1)
+
+    context = {'my_dict':my_dict,"my_list":my_list,'book':book}
+
+    return render(request,'temp_var.html',context)

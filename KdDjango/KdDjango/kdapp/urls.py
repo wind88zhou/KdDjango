@@ -19,4 +19,5 @@ urlpatterns = [
     url(r'^set_session$', views.set_session,name='set_session'), # 设置session
     url(r'^get_session$', views.get_session,name='get_session'), # 获取session
     url(r'^clear_session$', views.clear_session,name='clear_session'), # 清除session
+    url(r'^temp_var$', views.temp_var,name='temp_var'), 
 ]
