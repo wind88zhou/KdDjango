@@ -19,11 +19,11 @@
 <ul>
     {%for book in books %}
         {% if book.id <= 5 %}
-        <li class = "red"> {{forloop.counter}} -- {{book.btitle}} -- {{book.bpub_data | data:'Y年-m月-d日'}}</li>
+        <li class = "red"> {{forloop.counter}} -- {{book.btitle}} -- {{book.bpub_data | date:'Y年-m月-d日'}}</li>
         {% elif book.id <= 10 %}
-        <li class = "yellow"> {{forloop.counter}} -- {{book.btitle}}-- {{book.bpub_data | data:'Y年-m月-d日'}}</li>
+        <li class = "yellow"> {{forloop.counter}} -- {{book.btitle}}-- {{book.bpub_data | date:'Y年-m月-d日'}}</li>
         {% else %}
-        <li class = "green"> {{forloop.counter}} -- {{book.btitle}}-- {{book.bpub_data | data:'Y年-m月-d日'}}</li>
+        <li class = "green"> {{forloop.counter}} -- {{book.btitle}}-- {{book.bpub_data | date:'Y年-m月-d日'}}</li>
         {% endif %}
     {%endfor%}
 </ul>
