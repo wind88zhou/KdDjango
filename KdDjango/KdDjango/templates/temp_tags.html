@@ -18,9 +18,9 @@
 <body>
 <ul>
     {%for book in books %}
-        {% if book.id <= 2 %}
+        {% if book.id <= 5 %}
         <li class = "red"> {{forloop.counter}} -- {{book.btitle}}</li>
-        {% elif book.id <= 5 %}
+        {% elif book.id <= 10 %}
         <li class = "yellow"> {{forloop.counter}} -- {{book.btitle}}</li>
         {% else %}
         <li class = "green"> {{forloop.counter}} -- {{book.btitle}}</li>
