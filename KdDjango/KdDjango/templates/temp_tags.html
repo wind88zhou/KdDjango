@@ -7,7 +7,7 @@
 <body>
 <ul>
     {%for book in books %}
-        <li>{{book.btitle}}</li>
+        <li>{{forloop.counter}} -- {{book.btitle}}</li>
     {%endfor%}
 </ul>
 </body>
