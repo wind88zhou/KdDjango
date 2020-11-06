@@ -130,3 +130,8 @@ def temp_var(request):
     context = {'my_dict':my_dict,"my_list":my_list,'book':book}
 
     return render(request,'temp_var.html',context)
+
+# 模板标签的使用
+def temp_tags(request):
+    books = BookInfo.objects.all()
+    return render(request,'temp_tags.html',{'books':books})
