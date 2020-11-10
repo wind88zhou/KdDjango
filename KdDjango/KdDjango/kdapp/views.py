@@ -135,3 +135,7 @@ def temp_var(request):
 def temp_tags(request):
     books = BookInfo.objects.all()
     return render(request,'temp_tags.html',{'books':books})
+
+# 模板继承的使用
+def temp_inherit(request):
+    return render(request, 'child.html')

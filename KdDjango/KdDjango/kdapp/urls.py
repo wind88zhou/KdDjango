@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^clear_session$', views.clear_session,name='clear_session'), # 清除session
     url(r'^temp_var$', views.temp_var,name='temp_var'), 
     url(r'^temp_tags$',views.temp_tags),
+    url(r'^temp_inherit$',views.temp_inherit), # 模板继承的使用
 ]
