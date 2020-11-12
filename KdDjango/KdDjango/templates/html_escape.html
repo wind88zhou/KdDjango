@@ -14,6 +14,8 @@ html转义：<br/>
     {{content}}
 {% endautoescape %}
 模板硬编码中的字符串默认不会经过转义：<br/>
-{{test | default:'<h1>hello</h1>'}}
+{{test | default:'<h1>hello</h1>'}} <br/>
+手动进行转义：<br/>
+{{test | default:'&lt;h1gt;hello&lt;/h1&gt;'}} <br/>
 </body>
 </html>
