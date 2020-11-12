@@ -5,11 +5,13 @@
 <title>html转义：</title>
 </head>
 <body>
-<h1>导航条</h1>
 html转义：<br/>
 {{ content}}
 使用safe过滤器关闭转义：<br/>
 {{ content | safe}}
-<h1>版权信息</h1>
+使用autoescape关闭转义：<br/>
+{% autoescape off %}
+    {{content}}
+{% endautoescape %}
 </body>
 </html>
