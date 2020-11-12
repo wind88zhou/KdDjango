@@ -139,3 +139,7 @@ def temp_tags(request):
 # 模板继承的使用
 def temp_inherit(request):
     return render(request, 'child.html')
+
+# html转义
+def html_escape(request):
+    return render(request,'html_escape.html',{'content':'<h1>hello</h1>'})
