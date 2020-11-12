@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^temp_tags$',views.temp_tags),
     url(r'^temp_inherit$',views.temp_inherit), # 模板继承的使用
     url(r'^html_escape$',views.html_escape), # html转义
-    url(r'^url_reverse$',views.url_reverse), # url反向解析页面
+    url(r'^url_reverse$',views.url_reverse), # url反向解析页面 
 ]
 
 
