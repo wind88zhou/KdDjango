@@ -30,6 +30,6 @@ from . import views
 urlpatterns = [
     path('hello/', views.hello),
     path('sayNMB/',views.sayNMB),
-    path('kdapp/', include('kdapp.urls'),namespace='kadpp'),
+    path('kdapp/', include('kdapp.urls',namespace='kadpp')),
     url(r'^admin/', admin.site.urls),
 ]
