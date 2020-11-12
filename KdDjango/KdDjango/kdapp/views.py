@@ -144,5 +144,3 @@ def temp_inherit(request):
 def html_escape(request):
     return render(request,'html_escape.html',{'content':'<h1>hello</h1>'})
 
-def url_reverse(request):
-    return render(request,'url_reverse.html')  
