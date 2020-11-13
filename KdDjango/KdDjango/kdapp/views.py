@@ -188,5 +188,4 @@ def  showBookInfo(request):
     # 获取第一页内容
     page = paginator.page(1)
 
-
     return render(request,'kdapptest/show_book_info.html',{'page':page})
