@@ -127,4 +127,4 @@ USE_TZ = False  # True
 STATIC_URL = '/static/'
 # STATIC_URL = '/abc/'
 # 设置静态文件的保存目录
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]  
