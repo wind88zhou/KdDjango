@@ -176,7 +176,17 @@ def upload_handle(request):
 
     return HttpResponse('OK')
 
+# 导入django的分页类
+from django.core.paginator import Paginator
+
 def  showBookInfo(request):
     bookinfo = BookInfo.objects.filter(btitle = 'lxhdj')
 
-    return render(request,'kdapptest/show_book_info.html',{'bookinfo':bookinfo})
+    # 分页,每页显示5条
+    paginator =  Paginator(bookinfo,5)
+
+    # 获取第一页内容
+    page = paginator.page(1)
+
+
+    return render(request,'kdapptest/show_book_info.html',{'page':page})

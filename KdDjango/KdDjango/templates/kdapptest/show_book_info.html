@@ -6,7 +6,7 @@
 </head>
 <body>
 <ul>
-    {% for bookinfo in bookinfo %}
+    {% for bookinfo in page.object_list %}
         <li>{{bookinfo.btitle}}</li>
     {% endfor %}
 </ul>
