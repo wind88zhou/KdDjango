@@ -15,6 +15,8 @@ class BookInfoAdmin(admin.ModelAdmin):
     list_filter = ['btitle']
     # 新增搜索功能 - 按btitle搜索
     search_fields = ['btitle']
+    # 修改编辑页显示顺序
+    fields = ['bcomment','bread']
 
 # Register your models here.
 admin.site.register(Test,ATestAdmin)
