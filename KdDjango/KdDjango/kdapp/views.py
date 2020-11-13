@@ -184,6 +184,8 @@ def  showBookInfo(request):
 
     # 分页,每页显示5条
     paginator =  Paginator(bookinfo,5)
+    print(" 分页总页数 ：" + paginator.num_pages)  
+    print(" 分页的列表 ：" + paginator.page_range)
 
     # 获取第一页内容
     page = paginator.page(1)
