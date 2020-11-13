@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 # STATIC_URL = '/abc/'
 # 设置静态文件的保存目录
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]  
+# 设置上传文件的保存目录
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')

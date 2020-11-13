@@ -26,6 +26,5 @@ class BookInfoAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Test,ATestAdmin)
 admin.site.register(HeroInfo)
-
 admin.site.register(BookInfo,BookInfoAdmin)
 

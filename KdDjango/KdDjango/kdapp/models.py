@@ -41,3 +41,8 @@ class HeroInfo(models.Model):
 
     def __str__(self):
         return self.hname
+
+
+# 上传图片的类
+class PicTest(models.Model):
+    goods_pic = models.ImageField(upload_to = 'kdapp')
