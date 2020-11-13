@@ -16,7 +16,7 @@ class BookInfoAdmin(admin.ModelAdmin):
     # 新增搜索功能 - 按btitle搜索
     search_fields = ['btitle']
     # 修改编辑页显示顺序
-    fields = ['id','btitle','new_title','bpub_data','bcomment','bread','isDelete']
+    fields = ['id','btitle','bpub_data','bcomment','bread','isDelete']
 
 # Register your models here.
 admin.site.register(Test,ATestAdmin)
