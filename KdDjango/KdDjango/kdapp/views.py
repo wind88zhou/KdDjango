@@ -148,5 +148,5 @@ def html_escape(request):
 def static_test(request):
     # 获取浏览器的IP地址
     user_ip = request.META['REMOTE_ADDR']
-    print(user_ip)
+    print("访问IP：" + user_ip)
     return render(request,'kdapptest/static_test.html') 
