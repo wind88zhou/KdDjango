@@ -5,8 +5,8 @@
 <title>上传图片</title>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_tocken %}
+<form method="post" enctype="multipart/form-data" action="/upload_handle">
+    {% csrf_token %}
     <input type="file" name="pic"><br/>
     <input type="submit" value="上传"><br/>
 
