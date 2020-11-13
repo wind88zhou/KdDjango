@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect #导入简单的重定向函数
 from django.http import HttpResponse, JsonResponse,FileResponse,HttpResponseRedirect
 from kdapp  import models
-from kdapp.models import BookInfo
+from kdapp.models import BookInfo,PicTest
 from kdapp.My_forms import EmpForm
 from django.core.exceptions import ValidationError
 from datetime import date,datetime,timedelta
+from django.conf import settings
 # Create your views here
 
 def showAppMsg(request):
@@ -159,6 +160,17 @@ def show_upload(request):
 def upload_handle(request):
     pic = request.FILES['pic']
 
+    print(type(pic))
     print(pic)
+    print(pic.name)
+
+    save_path = '%s/kdapp/%s'%(settings.META_ROOT,pic.name)
+
+    with open(save_path,'wb') as f:
+        for content in pic.chunks():
+            f.write(content)
     
+    PicTest.objects.create(goods_pic='kdapp/%s'%pic.name)
+    
+
     return HttpResponse('OK')
