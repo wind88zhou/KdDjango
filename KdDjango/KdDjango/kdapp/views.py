@@ -153,4 +153,4 @@ def static_test(request):
 
 # 显示上传图片页面
 def show_upload(request):
-    return render(request,'kdapp/upload_pic.html')
+    return render(request,'kdapptest/upload_pic.html')
