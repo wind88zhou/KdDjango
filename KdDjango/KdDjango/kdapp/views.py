@@ -144,3 +144,6 @@ def temp_inherit(request):
 def html_escape(request):
     return render(request,'html_escape.html',{'content':'<h1>hello</h1>'})
 
+# 静态文件显示
+def static_test(request):
+    return render(request,'kdapptest/static_test.html') 
