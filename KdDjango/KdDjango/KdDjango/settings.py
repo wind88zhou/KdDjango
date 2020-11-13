@@ -124,7 +124,7 @@ USE_TZ = False  # True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 # 设置访问静态文件对应的url地址
-STATIC_URL = '/static/'
-# STATIC_URL = '/abc/'
+# STATIC_URL = '/static/'
+STATIC_URL = '/abc/'
 # 设置静态文件的保存目录
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
