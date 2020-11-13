@@ -26,7 +26,7 @@ class BookInfo(models.Model):
     def new_title(self):
         return self.btitle
     # 支持在admin页面点击 new_title进行排序
-    new_title.admin_order_filed = 'btitle'
+    new_title.admin_order_field = 'btitle'
 
 
 class HeroInfo(models.Model):
