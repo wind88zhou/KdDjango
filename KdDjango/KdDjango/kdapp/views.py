@@ -175,3 +175,8 @@ def upload_handle(request):
     
 
     return HttpResponse('OK')
+
+def  showBookInfo(request):
+    bookinfo = BookInfo.objects.filter(btitle = 'lxhdj')
+
+    return render(request,'kdapptest/show_book_info.html',{'bookinfo':bookinfo})
