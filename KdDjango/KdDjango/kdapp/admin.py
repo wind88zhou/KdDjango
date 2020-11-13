@@ -11,8 +11,10 @@ class BookInfoAdmin(admin.ModelAdmin):
     # 操作栏显示在下面
     actions_on_bottom = True
     actions_on_top = False
-    #新增右侧过滤栏
+    # 新增右侧过滤栏
     list_filter = ['btitle']
+    # 新增搜索功能 - 按btitle搜索
+    search_fields = ['btitle']
 
 # Register your models here.
 admin.site.register(Test,ATestAdmin)
