@@ -15,8 +15,13 @@ class BookInfoAdmin(admin.ModelAdmin):
     list_filter = ['btitle']
     # 新增搜索功能 - 按btitle搜索
     search_fields = ['btitle']
-    # 修改编辑页显示顺序
-    fields = ['btitle','bpub_data','bcomment','bread','isDelete']
+    # 修改编辑页显示顺序 --  fields与fieldsets只能二选一
+    # fields = ['btitle','bpub_data','bcomment','bread','isDelete']
+    # 将单条数据分组 --  fields与fieldsets只能二选一
+    fieldsets = (
+        ('基本',{'fields':['btitle']}),
+        ('高级',{'fields':['bpub_data','bcomment','bread','isDelete']})
+    )
 
 # Register your models here.
 admin.site.register(Test,ATestAdmin)
