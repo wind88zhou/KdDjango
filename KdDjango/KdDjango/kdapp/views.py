@@ -164,13 +164,13 @@ def upload_handle(request):
     print(pic)
     print(pic.name)
 
-    save_path = '%s/kdapp/%s'%(settings.META_ROOT,pic.name)
+    # save_path = '%s/kdapp/%s'%(settings.META_ROOT,pic.name)
 
-    with open(save_path,'wb') as f:
-        for content in pic.chunks():
-            f.write(content)
+    # with open(save_path,'wb') as f:
+    #     for content in pic.chunks():
+    #         f.write(content)
     
-    PicTest.objects.create(goods_pic='kdapp/%s'%pic.name)
+    # PicTest.objects.create(goods_pic='kdapp/%s'%pic.name)
     
 
     return HttpResponse('OK')
