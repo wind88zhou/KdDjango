@@ -1,5 +1,5 @@
 from django.contrib import admin
-from kdapp.models import Test,BookInfo,HeroInfo
+from kdapp.models import Test,BookInfo,HeroInfo,PicTest
 
 
 class  ATestAdmin(admin.ModelAdmin):
@@ -27,4 +27,4 @@ class BookInfoAdmin(admin.ModelAdmin):
 admin.site.register(Test,ATestAdmin)
 admin.site.register(HeroInfo)
 admin.site.register(BookInfo,BookInfoAdmin)
-
+admin.site.register(PicTest)
