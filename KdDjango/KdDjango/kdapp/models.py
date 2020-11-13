@@ -23,6 +23,10 @@ class BookInfo(models.Model):
     class Meta:
         db_table = "bookinfo"  # 指定模型类对应的表名
 
+    def new_title(self):
+        return self.btitle
+
+
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
     hgender = models.BooleanField(default=False)

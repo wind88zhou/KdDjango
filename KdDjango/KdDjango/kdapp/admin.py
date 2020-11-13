@@ -7,6 +7,7 @@ class  ATestAdmin(admin.ModelAdmin):
 
 class BookInfoAdmin(admin.ModelAdmin):
     list_per_page = 5 # 指定每页显示5条数据
+    list_display = ['id','btitle','new_title','bpub_data','bread','bcomment','isDelete']
 
 # Register your models here.
 admin.site.register(Test,ATestAdmin)
