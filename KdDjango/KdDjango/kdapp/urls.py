@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^temp_inherit$',views.temp_inherit), # 模板继承的使用
     url(r'^html_escape$',views.html_escape), # html转义
     url(r'^static_test$',views.static_test),
+    url(r'^show_upload$',views.show_upload),
 ]
 
 

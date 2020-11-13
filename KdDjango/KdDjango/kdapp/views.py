@@ -150,3 +150,7 @@ def static_test(request):
     user_ip = request.META['REMOTE_ADDR']
     print("访问IP：" + user_ip)
     return render(request,'kdapptest/static_test.html') 
+
+# 显示上传图片页面
+def show_upload(request):
+    return render(request,'kdapp/upload_pic.html')
