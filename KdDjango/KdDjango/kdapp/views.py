@@ -254,3 +254,25 @@ def post(request):
             return HttpResponse(u'输入为空')
     else:
         return HttpResponse(u'方法错误')
+
+
+# get_request('/paas/user/list',{"dev_id":"201424","page":"1","limit":"111","search":""}) 
+# post_request('/grp/add',{"console_uid":"80167244","dev_id":"201424","group_name":"fdsfsdf","remark":"das"})
+# GET请求方式的方法
+def get_request(lujing,params = {}):
+    r = requests.get(url = 'http://paasdev.kcssz.cloud.kingdee.com/omp_srv' + lujing ,params = params)
+    print("======请求接口：" + url)
+    print(r.text)
+    # 获取用户UID
+    # print(r.json()['data']['user_list'][0]['uid'])
+
+# POST请求方式的方法
+def post_request(lujing,data = {}):
+    r = requests.post(url = 'http://paasdev.kcssz.cloud.kingdee.com/omp_srv' + lujing ,data=data)
+    print("******请求接口："+ url)
+    print(r.text)
+
+
+def api_request(request):
+
+    return HttpResponse("OK")

@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^showBookInfo$',views.showBookInfo),
     url(r'^index$',views.index),
     url(r'^post$',views.post),
-
+    url(r'^api_request$',views.api_request),
 ]
 
 
