@@ -22,15 +22,15 @@ def addemp(request):
             data = form.cleaned_data
             data.pop("r_salary")
             models.Emp.objects.create(**data)
-            return redirect("/index/")
+            return redirect("/indexa/")
         else:  # 校验失败
             clear_errors = form.errors.get("__all__")  # 获取全局钩子错误信息
             return render(request, "addemp.html", {"form": form, "clear_errors": clear_errors})
 
-def index(request):
+def indexa(request):
     # 显示图书信息
     books = BookInfo.objects.all()
-    return render(request,"index.html",{'books':books})
+    return render(request,"indexa.html",{'books':books})
 
 def create(request):
     #  新增一本图书   sdsad
@@ -39,15 +39,15 @@ def create(request):
     b.bpub_data = date(1990,1,1)
     b.save()
 
-    # return HttpResponseRedirect('index') 简写如下一句
-    return redirect('index')
+    # return HttpResponseRedirect('indexa') 简写如下一句
+    return redirect('indexa')
 
 def delete(request,bid):
     # 删掉点击的图书
     book = BookInfo.objects.get(id = bid)
     book.delete()
-    # return HttpResponseRedirect('index') 简写如下一句
-    return redirect('index')
+    # return HttpResponseRedirect('indexa') 简写如下一句
+    return redirect('indexa')
 
 def login(request):
     # 获取cookie  username
@@ -70,7 +70,7 @@ def longin_check(request):
     # 2、进行登录校验
     if username == 'smart' and password =='123':
         # 用户名、密码正确
-        response = redirect('index')
+        response = redirect('indexa')
         # 判断是否需要记住用户名
         if remember == 'on':
             # 设置cookie username 过期时间为60s
