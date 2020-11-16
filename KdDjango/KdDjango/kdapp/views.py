@@ -261,7 +261,7 @@ def post(request):
 # GET请求方式的方法
 def get_request(lujing,params = {}):
     r = requests.get(url = 'http://paasdev.kcssz.cloud.kingdee.com/omp_srv' + lujing ,params = params)
-    print("======请求接口：" + url)
+    print("======请求接口：" + 'http://paasdev.kcssz.cloud.kingdee.com/omp_srv' + lujing)
     print(r.text)
     # 获取用户UID
     # print(r.json()['data']['user_list'][0]['uid'])
@@ -269,7 +269,7 @@ def get_request(lujing,params = {}):
 # POST请求方式的方法
 def post_request(lujing,data = {}):
     r = requests.post(url = 'http://paasdev.kcssz.cloud.kingdee.com/omp_srv' + lujing ,data=data)
-    print("******请求接口："+ url)
+    print("******请求接口："+ 'http://paasdev.kcssz.cloud.kingdee.com/omp_srv' + lujing)
     print(r.text)
 
 
