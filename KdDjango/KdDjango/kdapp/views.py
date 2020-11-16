@@ -193,3 +193,51 @@ def  showBookInfo(request):
     page = paginator.page(1)
 
     return render(request,'kdapptest/show_book_info.html',{'page':page})
+
+
+
+
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+import json
+from parkerapi import postapi
+ 
+def index(request):
+    pt=postapi.cls_api()
+    exr=request.POST.get('exr',None)
+    data=""
+    data1=""
+    if request.method=='POST':
+        data=pt.post(request.POST.get('url',None), json.loads(request.POST.get('testdate',None)))
+        result=data.json()
+        data1=result['message']
+        if int(result['message']==int(exr)):
+            data=u'测试通过' 
+        else:
+            data=u'测试失败' 
+    return render(request,"apitemplates/index.html",{"data":data,"data1":data1})
+ 
+def add_args(a,b):
+    x=int(a)
+    y=int(b)
+    return x+y
+ 
+def post(request):
+    if request.method=='POST':
+        d={}
+        if request.POST:
+            a=request.POST.get('a',None)
+            b=request.POST.get('b',None)
+            if a and b:
+                res=add_args(a, b)
+                d['message']=res
+                d=json.dumps(d)
+                return HttpResponse(d)
+            else:
+                return HttpResponse(u'输入错误')
+        else:
+            return HttpResponse(u'输入为空')
+    else:
+        return HttpResponse(u'方法错误')

@@ -27,6 +27,10 @@ urlpatterns = [
     url(r'^show_upload$',views.show_upload),
     url(r'^upload_handle$',views.upload_handle),
     url(r'^showBookInfo$',views.showBookInfo),
+    url(r'^index$',views.index),
+    url(r'^post$',views.post),
+
 ]
+
 
 
