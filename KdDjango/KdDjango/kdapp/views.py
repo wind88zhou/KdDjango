@@ -195,17 +195,30 @@ def  showBookInfo(request):
     return render(request,'kdapptest/show_book_info.html',{'page':page})
 
 
-
+# 封装接口调用类
+import requests
+import json
+class cls_api:
+    def post(self,url,par):
+        a_url=url
+        a_par=par
+        res=requests.post(a_url,a_par)
+        return res
+    
+    def get(self,url,par):
+        a_url=url
+        a_par=par
+        res=requests.get(a_url,a_par)
 
 
 
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
-from parkerapi import postapi
+# from parkerapi import postapi
  
 def index(request):
-    pt=postapi.cls_api()
+    pt=cls_api()
     exr=request.POST.get('exr',None)
     data=""
     data1=""
