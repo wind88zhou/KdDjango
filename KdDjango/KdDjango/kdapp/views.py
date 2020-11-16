@@ -274,6 +274,5 @@ def post_request(lujing,data = {}):
 
 
 def api_request(request):
-    r = showAppMsg()
-    print(r.text)
-    return HttpResponse("OK")
+
+    return HttpResponse("玛德，怎么就玩不来呢！")
