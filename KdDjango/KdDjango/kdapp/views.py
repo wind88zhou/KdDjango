@@ -274,5 +274,5 @@ def post_request(lujing,data = {}):
 
 
 def api_request(request):
-
+    get_request('/paas/user/list',{"dev_id":"201424","page":"1","limit":"111","search":""}) 
     return HttpResponse("OK")
