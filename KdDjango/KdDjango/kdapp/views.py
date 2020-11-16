@@ -274,6 +274,6 @@ def post_request(lujing,data = {}):
 
 
 def api_request(request):
-    res = request.GET('http://81.71.139.152:8000/kdapp/showAppMsg')
+    res = request.GET.get('http://81.71.139.152:8000/kdapp/showAppMsg')
     print(res.text)
     return HttpResponse("OK")
