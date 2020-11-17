@@ -20,8 +20,8 @@ class BookInfo(models.Model):
     def __str__(self):
         return self.btitle
     
-    class Meta:
-        db_table = "bookinfo"  # 指定模型类对应的表名
+    # class Meta:
+    #     db_table = "bookinfo"  # 指定模型类对应的表名
 
     def new_title(self):
         return self.btitle
