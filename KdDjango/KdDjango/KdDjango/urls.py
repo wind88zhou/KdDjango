@@ -29,7 +29,7 @@ from . import views
  
 urlpatterns = [
     path('hello/', views.hello),
-    path('sayNMB/',views.sayNMB),
     path('kdapp/', include('kdapp.urls')),
     url(r'^admin/', admin.site.urls),
+    path('funLife/', include('funLife.urls')),
 ]
