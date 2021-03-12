@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>= Main Page =</title>
+    <style type="text/css">
+        .clearfix:before {
+            content: '';
+            display: table;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* IE独有清除浮动的伪类 配合 .clearfix:after .clearfix:before 使用 */
+        .clearfix {
+            zoom: 1;
+        }
+
+        .main_dir {
+            width: 610px;
+            /* height: 600px; */
+            margin: 2px;
+            padding: 1px;
+            font-size: 0;
+            border: 1px solid #000;
+        }
+
+        .main_dir a {
+            width: 200px;
+            height: 50 px;
+            background-color: rgba(255, 255, 255, 0.74);
+            border: 2px solid rgb(219, 143, 43);
+            /* display: inline-block; */
+            font-size: 18px;
+            margin-left: -1px;
+            text-align: left;
+            line-height: 48px;
+            text-decoration: none;
+            color: #000;
+            font-family: 'Microsoft Yahei';
+            float: left;
+        }
+
+        .main_dir a:hover {
+            background-color: blue;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>选择对应功能:</h3>
+    </br>
+
+    <div class="main_dir clearfix">
+        <a href="/funLife/home">1、添加请求接口配置</a>
+        <a href="/funLife/funlife">2、测试json返回的地址</a>
+        <a href="/funLife/htmlstudy">3、HTML学习模块</a>
+        <a href="/funLife/css_study">4、CSS学习</a>
+        <a href="/funLife/form_study">5、表单学习</a>
+        <a href="/funLife/box_model_study">6、盒子模型学习</a>
+        <a href="/funLife/js_study">7.JS学习</a>
+        <a href="#">待定入口2</a>
+        <a href="#">待定入口3</a>
+        <a href="#">待定入口4</a>
+        <a href="#">待定入口5</a>
+        <a href="#">待定入口6</a>
+    </div>
+
+</body>
+
+</html>

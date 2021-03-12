@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型学习</title>
+    <style type="text/css">
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(182, 225, 236);
+
+            /* 盒子边框设计 */
+            /* 单边框设计 */
+            /* border-top-color: black;  */
+            /* border-top-width: 10px ; */
+            /* border-top-style: solid; */
+
+            /* 四边框设计 */
+            /* solid ： 实线 dashed： 虚线   dotted： 点线 */
+            /* border-top: 10px solid #000;
+            border-left: 10px dashed #000;
+            border-right: 10px dashed #000;
+            border-bottom: 10px dotted #000; */
+
+            /* 整个边框设计 统一样式 */
+            border: 10px solid red;
+
+            padding: 40px;
+            margin: 50px;
+        }
+
+        .box1 {
+            background-color: #fff;
+            border: 10px solid rgb(0, 255, 76);
+            padding: 20px;
+            margin: 30px;
+        }
+
+        .news_title {
+            width: 380px;
+            height: 35px;
+            border-top: 1px solid #f00;
+            border-bottom: 3px solid #666;
+            font-size: 20px;
+            color: #333;
+            font-family: 'Microsoft Yahei';
+            font-weight: normal;
+            padding-top: 15px;
+            line-height: 20px;
+            padding-left: 20px;
+        }
+
+        .news_title2 {
+            width: 400px;
+            height: 50px;
+            border-top: 1px solid #f00;
+            border-bottom: 3px solid #666;
+            font-size: 20px;
+            color: #333;
+            font-family: 'Microsoft Yahei';
+            font-weight: normal;
+
+            line-height: 50px;
+            text-indent: 20px;
+        }
+
+        .box_margin {
+            background-color: rgb(22, 211, 132);
+            width: 120px;
+            height: 120px;
+            /* margin: 40px auto 60px auto; */
+            margin: 0px;
+        }
+
+        .box_m {
+            width: 202px;
+            height: 156px;
+            background-color: pink;
+            /* 居中 margin 设置为左右边框auto */
+            margin: 50px auto 0;
+        }
+
+        .box_m div {
+            width: 200px;
+            height: 30px;
+            border: 1px solid greenyellow;
+            background-color: gold;
+            border-bottom: 0px;
+        }
+
+        .box_m .last {
+            border-bottom: 1px solid greenyellow;
+        }
+
+        .box01,
+        .box02 {
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 以下box01 box02的 外边距会合并，外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。*/
+        .box01 {
+            margin-bottom: 20px;
+        }
+
+        .box02 {
+            margin-top: 20px;
+        }
+
+        .box03 {
+            width: 500px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+        }
+
+        .box03 div {
+            margin: 20px;
+        }
+
+        /* margin-top 塌陷 */
+        .con {
+            width: 300px;
+            height: 300px;
+            background-color: gold;
+            /* margin-top 塌陷 解决办法1：外部盒子设置一个边框 */
+            /* border: 1px solid black; */
+            /* margin-top 塌陷 解决办法2:外部盒子设置 overflow:hidden */
+            /* overflow: hidden; */
+        }
+
+        /* margin-top 塌陷 解决办法3：使用伪元素类： */
+        .clearfix:before {
+            content: '';
+            display: table;
+        }
+
+        .box04 {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            margin-top: 100px;
+            margin-left: 50px;
+        }
+
+        /* css元素溢出 */
+        .box05 {
+            width: 300px;
+            /* 限定高度就会元素溢出 */
+            height: 200px;
+            border: 1px solid #000;
+            margin: 50px auto 0px;
+            background-color: gold;
+            line-height: 20px;
+            /* overflow的设置项在代码里 */
+            overflow: auto;
+        }
+
+        .box06 {
+            width: 500px;
+            height: 300px;
+            border: 1px solid rebeccapurple;
+            font-size: 0px;
+            margin: 50px auto 0;
+        }
+
+        .box06 a {
+            background-color: aqua;
+            width: 100px;
+            height: 50px;
+            font-size: 16px;
+            padding: 0 10px;
+            display: inline-block;
+        }
+
+        .menu {
+            width: 694px;
+            height: 50px;
+            /* background-color: cyan; */
+            margin: 50px auto 0;
+            font-size: 0;
+        }
+
+        .menu a {
+            width: 98px;
+            height: 48px;
+            background-color: #fff;
+            border: 1px solid gold;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: -1px;
+            text-align: center;
+            line-height: 48px;
+            text-decoration: none;
+            color: pink;
+            font-family: 'Microsoft Yahei';
+        }
+
+        .menu a:hover {
+            background-color: gold;
+            color: #fff;
+        }
+
+        .box08 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px;
+            border: 1px solid #000;
+        }
+
+        .con01 {
+            width: 200px;
+        }
+
+        .box09 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            display: none;
+        }
+
+        .con01:hover .box09 {
+            display: block;
+        }
+
+        .menu033 {
+            width: 694px;
+            height: 150px;
+            /* background-color: aqua; */
+            /* 去掉小圆点 */
+            list-style: none;
+            /* 覆盖原有margin */
+            margin: 50px auto 0px;
+            /*   去掉padding */
+            padding: 0px;
+        }
+
+        .menu033 li {
+            width: 98px;
+            height: 48px;
+            border: 1px solid gold;
+            /* background-color: #fff; */
+            display: inline-block;
+            float: left;
+            margin: -1px;
+        }
+
+        .menu033 li a {
+            /* background-color: #f00; */
+            display: block;
+            width: 98px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Microsoft Yahei';
+            color: rgb(207, 19, 50);
+        }
+
+        .menu033 li a:hover {
+            background-color: gold;
+            color: #fff;
+        }
+
+        .list {
+            width: 210px;
+            /* height: 400px; */
+            border: 1px solid #000;
+
+            margin: 50px auto 0;
+            list-style: none;
+            padding: 0;
+            /* 清除浮动1: 父级上增加属性overflow：hidden  */
+            /* overflow: hidden; */
+        }
+
+        .list li {
+            width: 50px;
+            height: 50px;
+            background-color: gold;
+            margin: 10px;
+            float: left;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* IE独有清除浮动的伪类 配合 .clearfix:after .clearfix:before 使用 */
+        .clearfix {
+            zoom: 1;
+        }
+
+        .conn {
+            width: 400px;
+            height: 80px;
+            border: 1px solid gold;
+            margin: 50px auto 0;
+        }
+
+        .conn div {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+        }
+
+        .box01111 {
+            background-color: green;
+            float: left;
+        }
+
+        .box02222 {
+            background-color: pink;
+            float: right;
+        }
+
+        .newstittle1 {
+            width: 400px;
+            height: 40px;
+            border-bottom: 1px solid #ff8200;
+            margin: 50px auto 0;
+        }
+
+        .newstittle1 h3 {
+            float: left;
+            width: 80px;
+            height: 40px;
+            background-color: #ff8200;
+            margin: 0;
+            font-size: 16;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-weight: normal;
+        }
+
+        .newstittle1 a {
+            float: right;
+            font: normal 14px/40px 'Microsoft Yahei';
+            color: #666;
+            text-decoration: none;
+        }
+
+
+        .newstittle1 h3:hover {
+            color: #f00;
+        }
+
+        .newstittle1 a:hover {
+            color: #ff8200;
+        }
+
+        .wenziraotu {
+            width: 600px;
+            border: 1px solid #000;
+            margin: 0px auto 50px;
+        }
+
+        .wenziraotu img {
+            float: left;
+            margin: 10px;
+        }
+
+        .con_dingwei {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+
+        .box011,
+        .box022 {
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .box011 {
+            background-color: green;
+            /* 相对定位 */
+            /* position: relative; */
+            /* left: 50px; */
+            /* top: 60px; */
+            /*绝对定位  */
+            position: absolute;
+            left: 50px;
+            top: 60px;
+            /* 固定定位
+            /* position: fixed;
+            left: 50px;
+            top: 60px; */
+        }
+
+        .box022 {
+            background-color: gold;
+        }
+
+        .fang {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            margin: 50px auto 0;
+            position: relative;
+            border-radius: 14px;
+        }
+
+        .yuan {
+            width: 20px;
+            height: 28px;
+            background-color: red;
+            color: #fff;
+            text-align: center;
+            line-height: 28px;
+
+            position: absolute;
+            left: 86px;
+            top: -14px;
+
+            border-radius: 14px;
+        }
+
+        .menudiv {
+            height: 80px;
+            background-color: gold;
+            /* 固定在浏览器位置就打开下行代码 */
+            /* position: fixed; */
+            width: 960px;
+            top: 0;
+            left: 50%;
+            margin-left: -480px;
+        }
+
+        .p {
+            text-align: center;
+        }
+
+        .popup {
+            width: 500px;
+            height: 300px;
+            border: 1px solid gold;
+
+            background-color: greenyellow;
+            color: #ffffff;
+            /* 固定在浏览器位置就打开下行代码 */
+            position: fixed;
+            left: 50%;
+            margin-left: -251px;
+            top: 50%;
+            z-index: 999;
+        }
+
+        .popup h2 {
+            background-color: aqua;
+            margin: 20px;
+            height: 40px;
+        }
+
+        /* 页面已全部盖住 */
+        .mask {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            left: 0;
+            top: 0;
+            opacity: 0.5;
+        }
+
+        .pop_con {
+            /* 隐藏页面 */
+            display: none;
+            /* 显示页面 */
+            /* display: block; */
+        }
+    </style>
+</head>
+
+<body>
+    <FIeldset>
+        <a href="/funLife/mainpage" id="link2" title="悬浮显示信息" target="_self">返回主页面</a>
+    </FIeldset>
+
+    <fieldset>
+        <div>定位实例:</div>
+        <div class="menudiv">菜单文字</div>
+        <p>网页文字</p>
+        <br />
+        <div class="pop_con">
+            <div class="popup">
+                <h2>弹框的标题</h2>
+            </div>
+            <div class="mask">
+                暗下去的效果
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div> 一个例子：</div>
+        <div class="fang">
+            <div class="yuan">5</div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div>定位玩玩：</div>
+        <div class="con_dingwei">
+            <div class="box011">1</div>
+            <div class="box022">2</div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="wenziraotu">
+            <img src="/static/images/gg.jpg" alt="h5的标志">
+            <div>父级上增加属性overflow：hidden
+                在最后一个子元素的后面加一个空的div，给它样式属性 clear:both（不推荐）
+                使用成熟的清浮动样式类，clearfix父级上增加属性overflow：hidden
+                在最后一个子元素的后面加一个空的div，给它样式属性 clear:both（不推荐）
+                使用成熟的清浮动样式类，clearfix父级上增加属性overflow：hidden
+                在最后一个子元素的后面加一个空的div，给它样式属性 clear:both（不推荐）
+                使用成熟的清浮动样式类，clearfix后一个子元素的后面加一个空的div，给它样式属性
+                个空的di个空的di个空的di个空的di个空的di个空的di个空的di个空的di个空的di个空的di个空的di
+                cl后一个子元素的后面加一个空的div，给它样式属性 cl</div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="newstittle1">
+            <h3>新闻标题</h3>
+            <a href="#">更多 &gt;</a>
+        </div>
+    </fieldset>
+
+    <FIeldset>
+        <div class="conn">
+            <div class="box01111"></div>
+            <div class="box02222"></div>
+        </div>
+    </FIeldset>
+
+    <FIeldset>
+        <ul class="list clearfix">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <!--  清除浮动2: 在最后一个子元素的后面加一个空的div，给它样式属性 clear:both（不推荐）  -->
+            <!-- <div style="clear: both;"></div> -->
+        </ul>
+    </FIeldset>
+
+    <FIeldset>
+        <div>使用表格做浮动：</div>
+        <ul class="menu033">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">解决方案</a></li>
+            <li><a href="#">公司新闻</a></li>
+            <li><a href="#">行业动态</a></li>
+            <li><a href="#">招贤纳才</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </FIeldset>
+
+    <FIeldset>
+        <div class="con01">
+            <h3>文字标题（移到此处有惊喜）</h3>
+            <div class="box09">文字标题的说明文字</div>
+
+        </div>
+    </FIeldset>
+
+    <FIeldset style="font-size: 0;">
+        <div style="font-size: 16px;"> display属性:</div>
+        <div class="box08">div元素</div>
+        <div class="box08">div元素</div>
+    </FIeldset>
+
+    <!-- 行内块例子 -->
+    <fieldset>
+        <div class="menu">
+            <a href="#">首页</a>
+            <a href="#">公司简介</a>
+            <a href="#">解决方案</a>
+            <a href="#">公司新闻</a>
+            <a href="#">行业动态</a>
+            <a href="#">招贤纳才</a>
+            <a href="#">联系我们</a>
+        </div>
+    </fieldset>
+    <!-- 块元素、内联元素、内联块元素 -->
+    <fieldset>
+        <div>
+            <div class="box06">
+                <a href="#">文字链接1</a>
+                <a href="#">文字链接2</a>
+                <a href="#">文字链接3</a>
+                <a href="#">文字链接4</a>
+                <a href="#">文字链接5</a>
+            </div>
+        </div>
+    </fieldset>
+
+    <FIeldset>
+        <!-- CSS元素溢出 -->
+        <div class="box05">当子元素的尺寸超过父元素的尺寸时，
+            需要设置父元素显示溢出的子元素的方式，
+            设置的方法是通过overflow属性来设置。
+            overflow的设置项：
+            1、visible 默认值。内容不会被修剪，会呈现在元素框之外。
+            2、hidden 内容会被修剪，并且其余内容是不可见的，此属性还有清除浮动、清除margin-top塌陷的功能。
+            3、scroll 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+            4、auto 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+            5、inherit 规定应该从父元素继承 overflow 属性的值
+        </div>
+    </FIeldset>
+
+
+    <!-- margin-top塌陷 -->
+    <fieldset>
+        <!-- <div class="con "> -->
+        <!-- /* margin-top 塌陷 解决办法3：使用伪元素类： */ -->
+        <div class="con clearfix">
+            <div class="box04">
+                -- margin-top塌陷 --
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <!-- margin合并的用途 -->
+        <div class="box03">
+            <div>
+                外边距合并指的是，
+                当两个垂直外边距相遇时，
+                它们将形成一个外边距。
+                合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+            </div>
+            <div>
+                外边距合并指的是，
+                当两个垂直外边距相遇时，
+                它们将形成一个外边距。
+                合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+            </div>
+            <div>
+                外边距合并指的是，
+                当两个垂直外边距相遇时，
+                它们将形成一个外边距。
+                合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+            </div>
+            <div>
+                外边距合并指的是，
+                当两个垂直外边距相遇时，
+                它们将形成一个外边距。
+                合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+            </div>
+        </div>
+    </fieldset>
+
+    <FIeldset>
+        <!-- 外边距会合并 -->
+        <div class="box01">1</div>
+        <div class="box02">2</div>
+    </FIeldset>
+
+    <fieldset>
+        <div class="box_margin">margin的技巧</div>
+        <div class="box_m">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="last"></div>
+        </div>
+    </fieldset>
+
+    <FIeldset>
+        <div>盒子模型学习：</div>
+        <div class="box">
+            元素在页面中显示成一个方块，
+            类似一个盒子，
+            CSS盒子模型就是使用现实中盒子来做比喻，
+            帮助我们设置元素对应的样式。
+            <div class="box1">盒子里面套盒子</div>
+        </div>
+    </FIeldset>
+
+    <fieldset>
+        <h3 class="news_title"> 新闻列表</h3>
+        <br />
+        <h3 class="news_title2"> 新闻列表</h3>
+    </fieldset>
+
+</body>
+
+</html>

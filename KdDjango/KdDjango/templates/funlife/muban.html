@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>====模板基准====</title>
+    <meta charset="utf-8">
+    <title>====Fun Life====</title>
 </head>
+
 <body>
+    
+    <label for="name">名字</label>
+    <input type="text" name="name" id="name"><br> <!-- 文本输入框 -->
+    <label for="occupation">职业</label>
+    <input type="text" name="occupation" id="occupation"><br> <!-- 文本输入框 -->
+    <input type="submit" name="submit" value="登录"> 提交按钮
+
+    <label for="ice-cream-choice">冰淇淋：</label>
+    <input type="text" list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+    <datalist id="ice-cream-flavors">
+        <option value="巧克力" label="by Adobe">
+        <option value="椰子" label="by Panic">
+        <option value="薄荷">
+        <option value="草莓">
+        <option value="香草">
+    </datalist><br />
+
+
     <!-- <form action="/search" method="get">
         <input type="text" name="q">
         <input type="submit" value="搜索">
     </form> -->
-<h1>导航条</h1>
-{% block b1 %}
-<h1>这是父模板b1块中的内容</h1>
-{% endblock b1%}
-<h1>版权信息</h1>
+    <h1>导航条</h1>
+    {% block b1 %}
+    <h2> == blockTemplates== </h2>
+    {% endblock b1%}
+    <h1>版权信息</h1>
 </body>
+
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试数据及结果展示</title>
+    <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+    <h3>请求配置：</h3>
+    <form action="/funLife/home" method="GET" autocomplete="on">
+        <table>
+            测试数据： <br />
+            <fieldset  style="width:1113px;">
+                接口名称: <label>{{ api_name }}</label><br />
+                请求地址: <label>{{ api_url }}</label><br />
+                请求方式: <label>{{ api_method }}</label><br />
+                请求头: <label>{{ api_headers }}</label><br />
+                请求参数: <label>{{ api_params }}</label><br />
+            </fieldset>
+            <br />
+            测试结果：<br />
+            <fieldset  style="width:1000px;">
+                <label>{{ result }}</label><br />
+            </fieldset>
+            <br />
+            <input type="submit" value="=重填=" />
+        </table>
+    </form>
+</body>
+
+</html>

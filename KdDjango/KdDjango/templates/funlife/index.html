@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>===接口测试===</title>
+    <link rel="shortcut icon" href="#" />
+</head>
+<!-- -带边框的用法：  <fieldset>    要框的内容    </fieldset>    --> 
+<!-- 浏览器里嵌网页 ：<iframe src="/funLife/index" width="200" height="200"></iframe> -->
+<body>
+    <h1>单接口请求</h1>
+    <form action="/funLife/index" method="post" autocomplete="on">
+        <table>
+            <fieldset style="width:1000px;">
+            <div id="header" style="background-color:#9e9b96;height:30px;width:1000px;">
+            <h3 style="margin-bottom:0;">接口基本信息：</h></div>
+            接口名称 ： <input type="text" name="api_name" placeholder="api_name" autofocus /> <br />
+            接口地址 ： <input type="text" name="api_url" placeholder="api_url" /> <br />
+            请求方式 ： <input type="text" name="api_method" placeholder="api_method" /> <br />
+            请求Headers：<br />
+            <input type="text" name="api_headers" placeholder="api_headers" /><br />
+            请求入参：<br />
+            <input type="text" name="api_params" placeholder="api_params" /><br />
+            </fieldset>  
+            <br />
+            <fieldset style="width:1000px;">
+            测试数据： <label>{{ testdata }}</label><br /> 
+            </fieldset>
+            <br />
+            <fieldset style="width:1000px;">
+            <div id="header" style="background-color:#9e9b96;height:30px;width:1000px;">
+            <h3 style="margin-bottom:0;">接口返回结果：</h3></div>
+            测试结果： <label>{{ result }}</label><br />
+            </fieldset>
+            <br />
+            <input type="reset" value="=重填=" />
+            <input type="submit" value="=提交=" />
+        </table>
+    </form>
+</body>
+
+</html>

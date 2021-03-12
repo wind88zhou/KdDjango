@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS学习</title>
+    <!-- css页面引入方法一：1、外联式：通过link标签，链接到外部样式表到页面中 -->
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <!-- css页面引入方法二：2、嵌入式：通过style标签，在网页上创建嵌入的样式表。 -->
+    <style type="text/css">
+        h1 {
+            background-color: rgb(228, 228, 241);
+            color: blueviolet;
+            font-size: 20px;
+        }
+
+        span {
+            background-color: rgb(121, 129, 113);
+            color: indigo;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        /* 定义id选择器 */
+        #div1 {
+            color: blue;
+        }
+
+        /* 定义类选择器 */
+        .grey {
+            color: grey;
+        }
+
+        /* 层级选择器 */
+        .box {
+            font-size: 20px;
+            line-height: 40px;
+            text-indent: 40px;
+        }
+
+        /* 层级选择器  */
+        .box span {
+            color: rgb(238, 244, 244);
+            font-size: 30px;
+        }
+
+        /* 5、组选择器 */
+        .box1,
+        .box2,
+        .box3 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background: red
+        }
+
+        .box2 {
+            background: pink
+        }
+
+        .box3 {
+            background: gold
+        }
+
+        /* 伪类及伪元素选择器 */
+        .box11:hover {
+            color: rgb(0, 255, 42)
+        }
+
+        .box22:before {
+            content: '行首文字';
+        }
+
+        .box33:after {
+            content: '行尾文字';
+        }
+    </style>
+</head>
+
+<body>
+    <FIeldset>
+        <a href="/funLife/mainpage" id="link2" title="悬浮显示信息" target="_self">返回主页面</a>
+    </FIeldset>
+
+    <fieldset>
+        <div style="color: blue;">盒子模型：</div>
+
+    </fieldset>
+    <FIeldset>
+        <div>这是个div标签：使用css页面引入方法一</div>
+        <h1>css页面引入方法二</h1>
+        <!-- css页面引入方法二 3、内联式：通过标签的style属性，在标签上直接写样式。 -->
+        <a href="http://www.baidu.com" style="font-size: 20px;color: gold;">使用css页面引入方法三</a>
+    </FIeldset>
+
+    <fieldset>
+        <span>常用样式演示:</span>
+        <div style="color: aqua;font-size: 18px;">
+            <span>HTML</span>是 HyperText Mark-up Language 的首字母简写，意思是超文本标记语言，超 文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的
+            标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm。
+        </div>
+        <div style="color: rgb(228, 0, 0);"> 颜色表示方法1： rgb表示</div>
+        <div style="color:red;"> 颜色表示方法2： 颜色名表示</div>
+        <div style="color:#ff0000;"> 颜色表示方法2： 16进制数值表示</div>
+
+        <div>css选择器1:标签选择器</div>
+        <div id="div1"> css选择器2:id选择器</div>
+        <div class="grey"> css选择器3:类选择器</div>
+        <div class="box"> css选择器4:层级选择器
+            主要应用在选择父元素下的子元素，
+            或者子元素下面的子元素，
+            可与标签元素结合使用，
+            <span>减少命名，</span>
+            同时也可以通过层级，
+            防止命名冲突。
+        </div>
+        <div class="box1">css选择器5:组选择器</div>
+        <div class="box2">css选择器5:组选择器</div>
+        <div class="box3">css选择器5:组选择器</div>
+        <div>以下为演示 css选择器6:伪类及伪元素选择器：</div>
+        <div class="box11">AAAA..hover用法..AAAA</div>
+        <div class="box22">....</div>
+        <div class="box33">....</div>
+    </fieldset>
+</body>
+
+</html>

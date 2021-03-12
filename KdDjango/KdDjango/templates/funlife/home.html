@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>===接口测试HOME页===</title>
+    <link rel="shortcut icon" href="#" />
+    <script>
+        window.onload = function () {
+            var oapi_name = document.getElementById('api_name');
+            var oapi_url = document.getElementById('api_url');
+            var oapi_method = document.getElementById('api_method');
+            var oapi_headers = document.getElementById('api_headers');
+            var oapi_params = document.getElementById('api_params');
+            var osubmit_btn = document.getElementById('submit_btn');
+
+            osubmit_btn.onclick = function () {
+                alert("请求名称：" + oapi_name.value + "\n"
+                    + "请求URL：" + oapi_url.value + "\n"
+                    + "请求方法：" + oapi_method.value + "\n"
+                    + "API请求头：" + oapi_headers.value + "\n"
+                    + "请求入参：" + oapi_params.value);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <FIeldset>
+        <a href="/funLife/mainpage" id="link2" title="悬浮显示信息" target="_self">返回主页面</a>
+    </FIeldset>
+    <h3>请求配置：</h3>
+    <form action="/funLife/resultShow" method="post" autocomplete="on">
+        <table>
+            <fieldset>
+                接口名称 ： <input type="text" name="api_name" autofocus placeholder="api_name" size="100" id="api_name">
+                <br />
+                接口地址 ： <input type="text" name="api_url" placeholder="api_url" size="100" id="api_url"> <br />
+                请求方式 ： <input type="text" name="api_method" placeholder="api_method" id="api_method"> <br />
+                请求头：<input type="text" name="api_headers" placeholder="api_headers" size="100" id="api_headers"><br />
+                请求入参：<input type="text" name="api_params" placeholder="api_params" size="100" id="api_params"><br />
+            </fieldset>
+            <br />
+            <input type="reset" value="=重填=">
+            <input type="submit" value="=提交=" id="submit_btn">
+        </table>
+    </form>
+
+</body>
+
+</html>

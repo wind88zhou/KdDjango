@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单学习</title>
+</head>
+
+<body>
+    <a href="/funLife/mainpage" id="link2" title="悬浮显示信息" target="_self">返回主页面</a>
+    <h3>注册表单：</h3>
+    <form action="/funLife/mainpage" method="post">
+        <div>
+            <label for="usename">用户名:</label>
+            <input type="text" name="usename" id="usename"/>
+        </div>
+        <br />
+        <div>
+            <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+            <input type="password" name="password" id="password"/>
+        </div>
+        <br />
+        <div>
+            <label for="">性&nbsp;&nbsp;&nbsp;&nbsp;别:</label>
+            <input type="radio" name="gender" value="0" id="male"/><label for="male">男</label>
+            <input type="radio" name="gender" value="1" id="female"/><label for="female">女</label>
+        </div>
+        <br />
+        <div>
+            <label for="">爱&nbsp;&nbsp;&nbsp;&nbsp;好:</label>
+            <input type="checkbox" name="like" value="study" />学习
+            <input type="checkbox" name="like" value="python" />python
+            <input type="checkbox" name="like" value="frontend" />前端
+            <input type="checkbox" name="like" value="beauty" />美少女
+        </div>
+        <br />
+        <div>
+            <label for="">玉&nbsp;&nbsp;&nbsp;&nbsp;照：</label>
+            <input type="file" name="photo" />
+        </div>
+        <br />
+
+        <div>
+            <label for="">籍&nbsp;&nbsp;&nbsp;&nbsp;贯:</label>
+            <select name="site" id="">
+                <option value="0">北京</option>
+                <option value="1">上海</option>
+                <option value="2">广州</option>
+                <option value="3">深圳</option>
+            </select>
+        </div>
+        <br />
+        <div>
+            <label for="">个人介绍：</label>
+            <textarea name="about" id="" cols="30" rows="5" name="introduce"></textarea>
+        </div>
+        <br />
+        <div>
+            <!-- 此行仅存储值，不会展示到页面 -->
+            <input type="hidden" name="隐藏值" value="12">
+        </div>
+        <br />
+        <div>
+            <input type="submit" name="" value="提交">
+            <!-- <input type="image" src="/static/images/提交image.jpg"> 图片提交按钮会提交两次 -->
+            <input type="reset" name="" value="重置">
+        </div>
+    </form>
+</body>
+
+</html>
