@@ -235,3 +235,6 @@ def box_model_study(request):
 
 def js_study(request):
     return render(request,'funlife/js_study.html')
+
+def bootstrap_study(request):
+    return render(request,'funlife/bootstrap_study.html')

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页换肤</title>
+    <link rel="stylesheet" href="/static/css/skin01.css" type="text/css" id="link01">
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn01 = document.getElementById('btn01');
+            var Obtn02 = document.getElementById('btn02');
+
+            var oLink = document.getElementById('link01')
+
+            oBtn01.onclick = function () {
+                oLink.href = "/static/css/skin01.css";
+            }
+
+            Obtn02.onclick = function () {
+                oLink.href = "/static/css/skin02.css";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="" value="皮肤一" id="btn01">
+    <input type="button" name="" value="皮肤二" id="btn02">
+
+</body>
+
+</html>
+
+
+<!-- 1 ####################################################################### -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn01');
+
+            // 匿名函数绑定事件
+            oBtn.onclick = function () {
+                var oDiv = document.getElementById('div1');
+                oDiv.style.color = 'red';
+                oDiv.style.fontSize = '30px';
+            };
+
+            // oBtn.onclick = fnChange;
+
+            // function fnChange() {
+            //     var oDiv = document.getElementById('div1');
+            //     oDiv.style.color = 'red';
+            //     oDiv.style.fontSize = '30px';
+            // }
+        }
+    </script>
+</head>
+
+<body>
+    <FIeldset>
+        <a href="/funLife/mainpage" id="link2" title="悬浮显示信息" target="_self">返回主页面</a>
+    </FIeldset>
+    <div id='div1'>这是个div元素</div>
+    <input type="button" name="" value="改变div" id='btn01'>
+</body>
+
+</html> -->
+
+<!-- 2 ####################################################################### -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var oInput1 = document.getElementById('input1');
+            var oInput2 = document.getElementById('input2');
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function () {
+                // 强制转换成int
+                var iVal01 = parseInt(oInput1.value);
+                var iVal02 = parseInt(oInput2.value);
+                alert(iVal01 + iVal02);
+                var iRlt = iVal01 + iVal02;
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="input1">
+    +
+    <input type="text" name="" id="input2">
+    <input type="button" name="" id="btn" value="=">
+</body>
+
+</html> -->
+
+<!-- 3 ####################################################################### -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap_study</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn01').click(function () {
+                // $('#modal04').modal('show'); //此时可点击背景及取消取消弹框
+                $('#modal04').modal({
+                    show: true,
+                    backdrop: 'static' //设置背景不可点击
+                });
+            })
+
+            $('#shutoff').click(function () {
+                $('#modal04').modal('hide');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal01">弹出大模态框</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal02">弹出中模态框</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal03">弹出小模态框</button>
+            <button class="btn btn-primary" id="btn01">控制弹窗</button>
+        </div>
+    </div>
+
+    <!-- .modal>.modal.dialog>.modal-content>.modal-header+.modal-body+.modal-footer -->
+    <div class="modal fade" id="modal01">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    提示弹框
+                </div>
+
+                <div class="modal-body">
+                    <p>这是弹出大模态框</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal02">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    提示弹框
+                </div>
+
+                <div class="modal-body">
+                    <p>这是弹出中模态框</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal03">
+        <div class="modal-dialog modal-sm ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    提示弹框
+                </div>
+
+                <div class="modal-body">
+                    <p>这是弹出小模态框</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal04">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    提示弹框
+                </div>
+
+                <div class="modal-body">
+                    <p>这是js控制的弹框内容</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                    <button class="btn btn-default" id="shutoff">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- 路劲导航 -->
+     <div class="container">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library1</a></li>
+                <li><a href="#">Library2</a></li>
+                <li><a href="#">Library3</a></li>
+                <li><a href="#">Library4</a></li>
+                <li class="active">Data</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    
+    <!--  下拉菜单 -->
+    <div class="row">
+        <div class="dropdown">
+            <div class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu">
+                <li><a href="#">菜单一</a></li>
+                <li><a href="#">菜单二</a></li>
+                <li><a href="#">菜单三</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 3 ####################################################################### -->
