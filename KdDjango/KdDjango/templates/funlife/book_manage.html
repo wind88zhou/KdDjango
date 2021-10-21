@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理</title>
+    <script src="/static/js/vue.js"></script>
+    <script src="/static/js/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>Hello!欢迎== {{user}} ==使用！</div>
+        <div align="right"> {{user}} </div>
+        <p>
+            <router-link to="/foo">== SHOW ==</router-link>
+            <router-link to="/bar">== ADD ==</router-link>
+            <router-link to="/bar1">== DEL ==</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+    <script>
+        const Foo = { template: '<a href="/funLife/book_show">展示</a>' }
+        const Bar = { template: '<a href="/funLife/book_add">新增</a>' }
+        const Bar1 = { template: '<a href="/funLife/book_del">删除</a>' }
+
+        const routes = [
+            { path: '/foo', component: Foo },
+            { path: '/bar', component: Bar },
+            { path: '/bar1', component: Bar1 }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const app = new Vue({
+            router
+        }).$mount('#app')
+
+    </script>
+</body>
+
+</html>

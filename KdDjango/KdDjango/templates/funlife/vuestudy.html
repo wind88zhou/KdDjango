@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> vuestudy </title>
+    <script src="/static/js/vue.js"></script>
+    <!-- <script src="/static/js/vue.global.js"></script> -->
+    <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+    <!-- <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script> -->
+    <script src="/static/js/vue-router.js"></script>
+    <style>
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+
+        .text-danger {
+            background: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- {% verbatim %}   {% endverbatim %} -->
+    {% verbatim %}
+    <div id="app">
+        <br>
+        <p>以下为computed的计算属性:</p>
+        <p>原始字符串: {{ message }}</p>
+        <p>计算后反转字符串: {{ reversedMessage }}</p>
+        <p>使用方法后反转字符串: {{ reversedMessage2() }}</p>
+
+        <br>
+        <p>以下为循环:</p>
+        <ol>
+            <li v-for="site in looplist">
+                {{ site.name }}
+            </li>
+        </ol>
+        <br>
+        <p>以下为绑定样式:</p>
+        <div class="static" v-bind:class="{'active': isActive, 'text-danger':hasError}">
+
+        </div>
+
+        <br>
+        <p>以下为事件监听:</p>
+
+        <button v-on:click="counter +=1">增加1</button>
+        <p>这个按钮被点击了{{counter}}次。</p>
+
+        <br>
+        <p>以下为自定义组件:</p>
+        <runboob1></runboob1>
+
+    </div>
+
+    <br>
+    <p>以下为路由 router:</p>
+    <div id="app1">
+        <p>
+            <router-link to="/foo" active-class="active">Go to Foo</router-link>
+            <router-link to="/bar " active-class="active">Go to Bar</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+    {% endverbatim %}
+
+    <script>
+        Vue.component('runboob1', {
+            template: '<h1>自定义组件!</h1>'
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Runoob!',
+                looplist: [
+                    { name: 'Runoob' },
+                    { name: 'Google' },
+                    { name: 'Taobao' }
+                ],
+                isActive: true,
+                hasError: true,
+                counter: 0,
+            },
+            computed: {
+                // 计算属性的 getter
+                reversedMessage: function () {
+                    // `this` 指向 vm 实例
+                    return this.message.split('').reverse().join('')
+                }
+            },
+            methods: {
+                reversedMessage2: function () {
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+
+
+        // 路由的使用
+        const Foo = { template: '<div>foo</div>' }
+        const Bar = { template: '<div>bar</div>' }
+
+        const routes = [
+            { path: '/foo', component: Foo },
+            { path: '/bar', component: Bar }
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        const app1 = new Vue({
+            router
+        }).$mount('#app1')
+    </script>
+
+
+
+</body>
+
+</html>

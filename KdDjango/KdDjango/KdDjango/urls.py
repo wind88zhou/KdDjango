@@ -23,8 +23,7 @@ Including another URLconf
 
 from django.urls import path,include
 from django.conf.urls import url
-from kdapp import views
-from django.contrib import admin 
+from django.contrib import admin
 from . import views
  
 urlpatterns = [
@@ -32,4 +31,5 @@ urlpatterns = [
     path('kdapp/', include('kdapp.urls')),
     url(r'^admin/', admin.site.urls),
     path('funLife/', include('funLife.urls')),
+    path('kdtestapp/', include('KdTestApp.urls')),
 ]

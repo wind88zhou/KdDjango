@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>录入参数页</title>
+</head>
+<body>
+
+<fieldset>
+    <h4>=== 接口列表页 ===</h4>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <div> 现在时间 ： {{now}}</div>
+    <br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>接口名称</th>
+            <th>请求URL</th>
+            <th>请求method</th>
+            <th>请求参数</th>
+            <th>备注</th>
+            <th>创建时间</th>
+            <th>更新时间</th>
+            <th>操作</th>
+        </tr>
+        {% for i in api_info %}
+        <tr>
+            <th>{{i.id}}</th>
+            <th>{{i.api_name}}</th>
+            <th>{{i.api_url}}</th>
+            <th>{{i.api_method}}</th>
+            <th>{{i.api_params}}</th>
+            <th>{{i.api_dsc}}</th>
+            <th>{{i.api_creat_time}}</th>
+            <th>{{i.api_update_time}}</th>
+            <th>编辑+测试</th>
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <a href="mainpage"> <- 返回主页</a>
+    <a href="#">跳转(待定) -> </a>
+</fieldset>
+
+</body>
+</html>

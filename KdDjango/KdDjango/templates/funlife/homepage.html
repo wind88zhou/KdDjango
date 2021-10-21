@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+
+
+    <script src="/static/js/vue.js"></script>
+
+</head>
+
+<body>
+    <h3>bookdata完整例举:</h3>
+    <p>{{bookdata}}</p>
+
+    <h3>bookdata列表显示:</h3>
+    <ul>
+        {% for i in bookdata %}
+        <li>{{i}}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>bookdata表格显示:</h3>
+    <table border="1">
+        {% for i in bookdata %}
+        <tr>
+            <th>{{i.id}}</th>
+            <th>{{i.btitle}}</th>
+            <th>{{i.bpub_data}}</th>
+            <th>{{i.bread}}</th>
+            <th>{{i.bcomment}}</th>
+            <th>{{i.isDelete}}</th>
+            <th>预留</th>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    <h3>使用vue显示bookdata:</h3>
+
+
+</body>
+
+</html>

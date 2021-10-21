@@ -17,4 +17,15 @@ urlpatterns = [
     url(r'^js_study$', views.js_study, name='js_study'),
     url(r'^bootstrap_study$', views.bootstrap_study, name='bootstrap_study'),
 
+    url(r'^homepage$', views.homepage, name='homepage'),
+    url(r'^vuestudy$', views.vuestudy, name='vuestudy'),
+
+    url(r'^book_add$', views.book_add, name='book_add'),
+    url(r'^book_del$', views.book_del, name='book_del'),
+    url(r'^book_show$', views.book_show, name='book_show'),
+    url(r'^book_manage$', views.book_manage, name='book_manage'),
+
+    url(r'^pipeline_test$', views.pipeline_test, name='pipeline_test'),
+    url(r'^webide_test$', views.webide_test, name='webide_test'),
+
 ]

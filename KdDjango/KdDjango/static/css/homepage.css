@@ -1,0 +1,38 @@
+.navbar-brand {
+    padding: 7px 15px 0 15px;
+}
+
+.navbar-inverse {
+    background-color: #ff722b;
+    border-color: #ff722b;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #ff21dac2;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #c75922;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.neirong2 {
+    font-size: 20px;
+    display: none;
+}

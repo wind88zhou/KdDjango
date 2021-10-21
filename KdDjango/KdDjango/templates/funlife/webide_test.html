@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBIDE-TEST</title>
+
+
+    <script src="/static/js/vue.js"></script>
+
+</head>
+
+<body>
+<h3>{{tittle}}</h3>
+<div style="color: #4cae4c"> 搜索出来的列表(re_list):</div>
+<br>
+<table border="1">
+    <tr>
+        <th><input type="checkbox" οnclick="swapCheck()"></th>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+        <th>token</th>
+        <th>update_time</th>
+        <th>git_project_id</th>
+        <th>refer_num</th>
+    </tr>
+
+    {% for i in re_list %}
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.token}}</td>
+        <td>{{i.update_time}}</td>
+        <td>{{i.git_project_id}}</td>
+        <td>{{i.refer_num}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<div style="color: red">被删除的代码仓库ID：{{to_del_repository_id}}</div>
+<br>
+
+</body>
+
+</html>
